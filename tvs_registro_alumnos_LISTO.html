@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TVS Motor Company — Registro UAP 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1A2A5E;
+      --red: #E31E24;
+      --red-dark: #b81519;
+      --white: #FFFFFF;
+      --light: #F4F6FB;
+      --border: #d0d8f0;
+      --text: #1a1a2e;
+      --muted: #6b7591;
+    }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--light);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 0 60px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      width: 100%;
+      background: var(--navy);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .header-stripe {
+      width: 100%;
+      height: 6px;
+      background: var(--red);
+    }
+    .header-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 28px 24px 22px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-right: 2px solid rgba(255,255,255,0.2);
+      padding-right: 20px;
+    }
+    .logo-tvs {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .logo-motor {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+    .header-text { flex: 1; }
+    .header-text h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1.25;
+    }
+    .header-text p {
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+    .red-tag {
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-top: 7px;
+      display: inline-block;
+    }
+
+    /* ── CARD ── */
+    .card {
+      width: 100%;
+      max-width: 680px;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 32px rgba(26,42,94,0.09);
+      margin: 28px auto 0;
+      padding: 36px 40px 40px;
+    }
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 20px;
+    }
+    .full { grid-column: 1 / -1; }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-bottom: 6px;
+    }
+    label span { color: var(--red); }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1.5px solid var(--border);
+      border-radius: 7px;
+      padding: 11px 14px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 14.5px;
+      color: var(--text);
+      background: #fafbff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      appearance: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(26,42,94,0.08);
+      background: var(--white);
+    }
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A2A5E' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    textarea { resize: vertical; min-height: 78px; }
+
+    /* ── INTERÉS MOTOS ── */
+    .motos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .moto-option input[type="checkbox"] { display: none; }
+    .moto-option label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 8px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--navy);
+      background: #fafbff;
+      transition: all 0.18s;
+      text-transform: none;
+    }
+    .moto-option label .icon { font-size: 22px; margin-bottom: 5px; display: block; }
+    .moto-option input:checked + label {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+
+    /* ── DIVIDER ── */
+    .divider { margin: 28px 0; border: none; border-top: 1px solid var(--border); }
+
+    /* ── CONSENT ── */
+    .consent-block {
+      background: #f0f3fb;
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .consent-block input[type="checkbox"] {
+      width: 18px; height: 18px;
+      min-width: 18px;
+      margin-top: 1px;
+      cursor: pointer;
+      accent-color: var(--navy);
+    }
+    .consent-block p {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── BUTTON ── */
+    .btn-submit {
+      width: 100%;
+      margin-top: 24px;
+      padding: 16px;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-submit:hover { background: var(--red-dark); }
+    .btn-submit:active { transform: scale(0.99); }
+
+    /* ── SUCCESS ── */
+    #success-msg {
+      display: none;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    #success-msg .check { font-size: 52px; margin-bottom: 12px; }
+    #success-msg h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      color: var(--navy);
+      text-transform: uppercase;
+    }
+    #success-msg p { font-size: 15px; color: var(--muted); margin-top: 8px; }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: 680px;
+      width: 100%;
+      margin: 18px auto 0;
+      text-align: center;
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+    footer strong { color: var(--navy); }
+
+    @media (max-width: 600px) {
+      .card { padding: 24px 18px 28px; margin: 16px auto 0; border-radius: 0; }
+      .form-grid { grid-template-columns: 1fr; }
+      .motos-grid { grid-template-columns: repeat(2, 1fr); }
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .logo-block { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); padding-right: 0; padding-bottom: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-stripe"></div>
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-tvs">TVS</div>
+      <div class="logo-motor">Motor Company</div>
+    </div>
+    <div class="header-text">
+      <h1>Registro de Alumnos<br>Activación UAP 2026</h1>
+      <p>Universidad Autónoma del Perú · Campus Villa El Salvador</p>
+      <span class="red-tag">Abril 2026</span>
+    </div>
+  </div>
+</header>
+
+<div class="card">
+  <form id="regForm" novalidate>
+
+    <!-- DATOS PERSONALES -->
+    <div class="section-label">📋 Datos Personales</div>
+    <div class="form-grid">
+
+      <div>
+        <label for="nombres">Nombres <span>*</span></label>
+        <input type="text" id="nombres" name="nombres" placeholder="Ej. María" required />
+      </div>
+
+      <div>
+        <label for="apellidos">Apellidos <span>*</span></label>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Ej. García López" required />
+      </div>
+
+      <div>
+        <label for="celular">Celular <span>*</span></label>
+        <input type="tel" id="celular" name="celular" placeholder="9XXXXXXXX" maxlength="9" required />
+      </div>
+
+      <div>
+        <label for="email">Correo Electrónico</label>
+        <input type="email" id="email" name="email" placeholder="correo@uap.edu.pe" />
+      </div>
+
+    </div>
+
+    <hr class="divider" />
+
+    <!-- INFORMACIÓN ACADÉMICA -->
+    <div class="section-label">🎓 Información Académica</div>
+    <div class="form-grid">
+
+      <div>
+        <label for="carrera">Carrera <span>*</span></label>
+        <select id="carrera" name="carrera" required>
+          <option value="" disabled selected>Selecciona tu carrera</option>
+          <optgroup label="Ingeniería y Arquitectura">
+            <option>Ingeniería Industrial</option>
+            <option>Ingeniería de Sistemas</option>
+            <option>Ingeniería Civil</option>
+            <option>Arquitectura</option>
+          </optgroup>
+          <optgroup label="Ciencias de Gestión">
+            <option>Administración</option>
+            <option>Contabilidad</option>
+            <option>Marketing</option>
+          </optgroup>
+          <optgroup label="Derecho">
+            <option>Derecho y Ciencias Políticas</option>
+          </optgroup>
+          <optgroup label="Salud">
+            <option>Enfermería</option>
+            <option>Odontología</option>
+            <option>Psicología</option>
+          </optgroup>
+          <optgroup label="Educación">
+            <option>Educación Inicial</option>
+            <option>Educación Primaria</option>
+          </optgroup>
+          <option value="Otra">Otra carrera</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="ciclo">Ciclo Académico <span>*</span></label>
+        <select id="ciclo" name="ciclo" required>
+          <option value="" disabled selected>Selecciona tu ciclo</option>
+          <option>1.° Ciclo</option>
+          <option>2.° Ciclo</option>
+          <option>3.° Ciclo</option>
+          <option>4.° Ciclo</option>
+          <option>5.° Ciclo</option>
+          <option>6.° Ciclo</option>
+          <option>7.° Ciclo</option>
+          <option>8.° Ciclo</option>
+          <option>9.° Ciclo</option>
+          <option>10.° Ciclo</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="turno">Turno <span>*</span></label>
+        <select id="turno" name="turno" required>
+          <option value="" disabled selected>Selecciona tu turno</option>
+          <option>Turno Día (8am – 5pm)</option>
+          <option>Turno Noche (6:15pm – 10:30pm)</option>
+          <option>Fines de Semana</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="movilidad">¿Tienes moto? <span>*</span></label>
+        <select id="movilidad" name="movilidad" required>
+          <option value="" disabled selected>Selecciona</option>
+          <option>Sí, tengo moto propia</option>
+          <option>No tengo, pero me interesa</option>
+          <option>No me interesa aún</option>
+        </select>
+      </div>
+
+    </div>
+
+    <hr class="divider" />
+
+    <!-- INTERÉS EN MODELOS -->
+    <div class="section-label">🏍️ ¿Qué modelo te llama la atención?</div>
+    <div class="motos-grid">
+      <div class="moto-option">
+        <input type="checkbox" id="m1" name="modelos" value="Sport 100" />
+        <label for="m1"><span class="icon">🛵</span>Sport 100</label>
+      </div>
+      <div class="moto-option">
+        <input type="checkbox" id="m2" name="modelos" value="Ntorq 125" />
+        <label for="m2"><span class="icon">⚡</span>Ntorq 125</label>
+      </div>
+      <div class="moto-option">
+        <input type="checkbox" id="m3" name="modelos" value="Stryker 125" />
+        <label for="m3"><span class="icon">🔵</span>Stryker 125</label>
+      </div>
+      <div class="moto-option">
+        <input type="checkbox" id="m4" name="modelos" value="Raider 125" />
+        <label for="m4"><span class="icon">🏍️</span>Raider 125</label>
+      </div>
+      <div class="moto-option">
+        <input type="checkbox" id="m5" name="modelos" value="Raider FI" />
+        <label for="m5"><span class="icon">💨</span>Raider FI</label>
+      </div>
+      <div class="moto-option">
+        <input type="checkbox" id="m6" name="modelos" value="Apache RTR 160" />
+        <label for="m6"><span class="icon">🔴</span>Apache RTR 160</label>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- CONSENTIMIENTO -->
+    <div class="consent-block">
+      <input type="checkbox" id="consent" name="consent" required />
+      <p>Acepto que TVS Motor Company Perú gestione mis datos de contacto para enviarme información sobre productos, ofertas exclusivas UAP y eventos de la marca. Puedo revocar este consentimiento en cualquier momento.</p>
+    </div>
+
+    <button type="submit" class="btn-submit">Registrarme ahora →</button>
+
+  </form>
+
+  <!-- SUCCESS -->
+  <div id="success-msg">
+    <div class="check">✅</div>
+    <h2>¡Registro Exitoso!</h2>
+    <p>Gracias por registrarte. Pronto recibirás información exclusiva de TVS.<br>¡Nos vemos en el Test Drive!</p>
+  </div>
+</div>
+
+<footer>
+  <p>Activación TVS Motor Company · <strong>Universidad Autónoma del Perú</strong> · Campus Villa El Salvador · Abril 2026</p>
+  <p style="margin-top:4px;">www.tvsperu.com</p>
+</footer>
+
+<script>
+  document.getElementById('regForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn  = form.querySelector('.btn-submit');
+
+    // Validación
+    const required = form.querySelectorAll('[required]');
+    let ok = true;
+    required.forEach(el => {
+      el.style.borderColor = '';
+      if (el.type === 'checkbox' ? !el.checked : !el.value.trim()) {
+        el.style.borderColor = '#E31E24';
+        ok = false;
+      }
+    });
+    if (!ok) {
+      const first = form.querySelector('[style*="E31E24"]');
+      if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    // Modelos seleccionados
+    const modelos = [...form.querySelectorAll('input[name="modelos"]:checked')]
+      .map(c => c.value).join(', ') || 'Ninguno seleccionado';
+
+    // Armar datos para Formspree
+    const data = {
+      _replyto:  form.email.value.trim() || 'jcvillar@indianperu.com.pe',
+      fecha:     new Date().toLocaleString('es-PE', { timeZone: 'America/Lima' }),
+      nombres:   form.nombres.value.trim(),
+      apellidos: form.apellidos.value.trim(),
+      celular:   form.celular.value.trim(),
+      email:     form.email.value.trim() || '—',
+      carrera:   form.carrera.value,
+      ciclo:     form.ciclo.value,
+      turno:     form.turno.value,
+      movilidad: form.movilidad.value,
+      modelos:   modelos,
+    };
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    try {
+      const res = await fetch('https://formspree.io/f/xvzdbgyl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } else {
+        throw new Error('Error en el envío');
+      }
+    } catch (err) {
+      console.error('Formspree error:', err);
+      btn.disabled = false;
+      btn.textContent = 'Registrarme ahora →';
+      alert('Hubo un problema al enviar el registro. Por favor intenta de nuevo.');
+    }
+  });
+
+  // Celular: solo números
+  document.getElementById('celular').addEventListener('input', function() {
+    this.value = this.value.replace(/\D/g, '');
+  });
+</script>
+
+</body>
+</html>
